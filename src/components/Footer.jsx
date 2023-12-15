@@ -7,10 +7,11 @@ import { IoLogoInstagram } from "react-icons/io";
 import { IoLogoLinkedin } from "react-icons/io";
 import { FaXTwitter } from "react-icons/fa6";
 import { AiFillGithub } from "react-icons/ai";
+
 const Footer = () => {
   return (
-    <div className="w-full flex bg-black/60 flex-row sm:flex-col p-2">
-      <div className="w-1/3 flex flex-col items-center justify-center sm:w-full">
+    <div className="w-full flex bg-black/60 flex-row sm:flex-col px-2 py-5">
+      <div className="w-1/3 flex flex-col items-center justify-center sm:w-full" >
         <p className="text-lg font-bold text-yellow-500">My Resume</p>
         <IoDocumentTextOutline
           size={30}
@@ -18,7 +19,7 @@ const Footer = () => {
           color=""
         />
       </div>
-      <div className="w-1/3 flex flex-col items-center justify-center sm:w-full p-2">
+      <div className="w-1/3 flex flex-col items-center justify-center sm:w-full p-2" >
         <p className="text-lg font-bold py-2 text-yellow-500">
           Contact Details
         </p>
@@ -37,7 +38,7 @@ const Footer = () => {
           </span>
         </a>
       </div>
-      <div className="w-1/3 flex flex-col items-center justify-center sm:w-full">
+      <div className="w-1/3 flex flex-col items-center justify-center sm:w-full" >
         <p className="text-lg font-bold py-2 text-yellow-500">Socials</p>
         <div className="w-full justify-center px-5 gap-5 flex">
           <Link

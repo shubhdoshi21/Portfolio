@@ -5,15 +5,21 @@ import { IoLogoInstagram } from "react-icons/io";
 import { IoLogoLinkedin } from "react-icons/io";
 import { AiFillGithub } from "react-icons/ai";
 import { IoDocumentTextOutline } from "react-icons/io5";
-
+import Typewriter from "./Typewriter";
 const Home = ({ homeRef }) => {
+  const lines = [
+    "Frontend Web-Developer",
+    "Software Engineer",
+    "React Developer",
+  ];
   return (
-    <div className="w-full" ref={homeRef}>
-      <div className="w-full flex h-screen pt-[10vh] flex-row sm:flex-col-reverse">
-        <div className="flex w-[60%] sm:w-full p-5 flex-col justify-center sm:text-center">
+    <div className="w-full" ref={homeRef} id="home">
+      <div className="w-full flex h-screen pt-20 sm:pt-0 flex-row sm:flex-col-reverse">
+        <div className="flex w-[60%] sm:w-full p-5 flex-col justify-center sm:text-center" data-aos="fade-right">
           <p className="text-2xl sm:text-xl">Hello ,It's Me</p>
           <p className="text-5xl text-yellow-500 py-2 md:text:4xl sm:text-3xl">Shubh Doshi</p>
-          <p className="text-2xl sm:text-xl">And I'm a Frontend Web-Developer</p>
+         
+          <span className="flex text-2xl sm:text-xl">And I'm a <Typewriter lines={lines} /></span>
           <p className="text-xl sm:text-lg pt-5">
             Are you looking for the perfect software developer who has expertise
             in creating a Full Stack Website?
@@ -23,7 +29,7 @@ const Home = ({ homeRef }) => {
             looking for. Your work will be done on time ans as per your
             requirement. Just reach out and let us know your needs.
           </p>
-          <div className="w-full justify-center p-5 gap-5 flex">
+          <div className="w-full justify-center p-5 gap-5 flex" data-aos="fade-up">
             <Link
               to="https://instagram.com/ll._shubh_21_.ll"
               target="_blank"
@@ -61,8 +67,8 @@ const Home = ({ homeRef }) => {
             />
           </div>
         </div>
-        <div className="flex w-[40%] sm:w-full items-center justify-center">
-          <img src={img} alt="" className="p-5" />
+        <div className="flex w-[40%] sm:w-full sm:-mb-10 items-center justify-center">
+          <img src={img} alt="" className="p-5" data-aos="fade-left"/>
         </div>
       </div>
     </div>

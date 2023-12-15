@@ -4,7 +4,7 @@
 
 /* Hide the default scrollbar */
 ::-webkit-scrollbar {
-  width: 0.6rem;
+  width: 0.4rem;
   background-color: transparent;
 }
 
@@ -16,10 +16,28 @@
   /* Handle   */
 ::-webkit-scrollbar-thumb {
   background-color: #eab208;
-  border-radius: 0.3rem;
+  border-radius: 0.2rem;
 }
 
   /* Handle on hover   */
 ::-webkit-scrollbar-thumb:hover {
   background-color: #6b570f;
+}
+
+.borderz {
+  background-image: linear-gradient(
+    90deg,
+    #6b570f54 0%,
+    #eab208 50%,
+    #6b570f54 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  background-position: 50% 100%;
+  width: auto;
+  transition: background-size 0.5s ease-in-out;
+}
+
+.borderz.active {
+  background-size: 100% 2px;
 }

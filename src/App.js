@@ -1,4 +1,4 @@
-import React, { useState ,useRef } from "react";
+import React, { useState ,useRef, useEffect } from "react";
 import Nav from "./components/Nav";
 import Sidebar from "./components/Sidebar";
 import { RxPinTop } from "react-icons/rx";
@@ -9,9 +9,18 @@ import About from "./components/About";
 import Footer from "./components/Footer";
 import Education from "./components/Education";
 import Projects from "./components/Projects";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function App() {
-
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      offset: 100, 
+      easing: "ease-in-out", 
+    });
+  }, []);
+ 
   const homeRef = useRef(null);
   const aboutRef = useRef(null);
   const eduRef = useRef(null);
@@ -65,9 +74,9 @@ function App() {
   }, []);
 
   return (
-    <div className="bg-[#1e1e1e] text-white">
+    <div className="bg-[#1e1e1e] text-white overflow-hidden">
       {width > breakpoint ? (
-        <Nav key="navbar" handleAboutClick={handleAboutClick} handleHomeClick={handleHomeClick} handleContactClick={handleContactClick} handleEduClick={handleEduClick} handleProjectClick={handleProjectClick}/>
+        <Nav key="navbar" handleAboutClick={handleAboutClick} handleHomeClick={handleHomeClick} handleContactClick={handleContactClick} handleEduClick={handleEduClick} handleProjectClick={handleProjectClick} homeRef={homeRef} aboutRef={aboutRef} eduRef={eduRef} projectRef={projectRef} contactRef={contactRef}/>
       ) : (
         [
           !showSidebar ? (
@@ -80,7 +89,7 @@ function App() {
         ]
       )}
       {showScrollToTop && (
-        <div className="fixed bottom-3 right-3 p-3 hover:-translate-y-[1vh] transition duration-300 z-20 bg-black/70 rounded-full ring-2 ring-[#eab208]" onClick={handleScrollToTop}>
+        <div className="fixed bottom-3 right-3 p-3 hover:-translate-y-[1vh] transition duration-300 z-20 bg-black/70 rounded-full ring-2 ring-[#eab208]" onClick={handleScrollToTop} data-aos="flip-up">
           <RxPinTop
             color="#eab208"
             size="20px"
@@ -102,8 +111,6 @@ export default App;
 
 /*
 pending features :
-navbar underline tracker
 resume navigation
 project section
-data aos
 */
