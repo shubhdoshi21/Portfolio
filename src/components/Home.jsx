@@ -18,8 +18,8 @@ const Home = ({ homeRef }) => {
         <div className="flex w-[60%] sm:w-full p-5 flex-col justify-center sm:text-center" data-aos="fade-right">
           <p className="text-2xl sm:text-xl">Hello ,It's Me</p>
           <p className="text-5xl text-yellow-500 py-2 md:text:4xl sm:text-3xl">Shubh Doshi</p>
-         
-          <span className="flex text-2xl sm:text-xl">And I'm a <Typewriter lines={lines} /></span>
+
+          <span className="flex sm:self-center text-2xl sm:text-xl">And I'm a <Typewriter lines={lines} /></span>
           <p className="text-xl sm:text-lg pt-5">
             Are you looking for the perfect software developer who has expertise
             in creating a Full Stack Website?

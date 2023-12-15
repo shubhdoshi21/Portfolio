@@ -1,4 +1,4 @@
-import React, { useState ,useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Nav from "./components/Nav";
 import Sidebar from "./components/Sidebar";
 import { RxPinTop } from "react-icons/rx";
@@ -16,11 +16,11 @@ function App() {
   useEffect(() => {
     AOS.init({
       duration: 1000,
-      offset: 100, 
-      easing: "ease-in-out", 
+      offset: 100,
+      easing: "ease-in-out",
     });
   }, []);
- 
+
   const homeRef = useRef(null);
   const aboutRef = useRef(null);
   const eduRef = useRef(null);
@@ -28,19 +28,29 @@ function App() {
   const contactRef = useRef(null);
 
   const handleHomeClick = () => {
-    homeRef.current.scrollIntoView({ behavior: "smooth" });
+    if (homeRef.current) {
+      homeRef.current.scrollIntoView({ behavior: "smooth" });
+    }
   };
   const handleAboutClick = () => {
-    aboutRef.current.scrollIntoView({ behavior: "smooth" });
+    if (aboutRef.current) {
+      aboutRef.current.scrollIntoView({ behavior: "smooth" });
+    }
   };
   const handleEduClick = () => {
-    eduRef.current.scrollIntoView({ behavior: "smooth" });
+    if (eduRef.current) {
+      eduRef.current.scrollIntoView({ behavior: "smooth" });
+    }
   };
   const handleProjectClick = () => {
-    projectRef.current.scrollIntoView({ behavior: "smooth" });
+    if (projectRef.current) {
+      projectRef.current.scrollIntoView({ behavior: "smooth" });
+    }
   };
   const handleContactClick = () => {
-    contactRef.current.scrollIntoView({ behavior: "smooth" });
+    if (contactRef.current) {
+      contactRef.current.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   const [showSidebar, setshowSidebar] = useState(false);
@@ -76,33 +86,56 @@ function App() {
   return (
     <div className="bg-[#1e1e1e] text-white overflow-hidden">
       {width > breakpoint ? (
-        <Nav key="navbar" handleAboutClick={handleAboutClick} handleHomeClick={handleHomeClick} handleContactClick={handleContactClick} handleEduClick={handleEduClick} handleProjectClick={handleProjectClick} homeRef={homeRef} aboutRef={aboutRef} eduRef={eduRef} projectRef={projectRef} contactRef={contactRef}/>
+        <Nav
+          key="navbar"
+          handleAboutClick={handleAboutClick}
+          handleHomeClick={handleHomeClick}
+          handleContactClick={handleContactClick}
+          handleEduClick={handleEduClick}
+          handleProjectClick={handleProjectClick}
+          homeRef={homeRef}
+          aboutRef={aboutRef}
+          eduRef={eduRef}
+          projectRef={projectRef}
+          contactRef={contactRef}
+        />
       ) : (
         [
           !showSidebar ? (
-            <div key="menubar" className="fixed top-10 right-10 cursor-pointer z-50">
+            <div
+              key="menubar"
+              className="fixed top-10 right-10 cursor-pointer z-50"
+            >
               <RiMenu3Fill size="30px" onClick={showHandler} />
             </div>
           ) : (
-            <Sidebar key="sidebar" handleClick={showHandler} handleAboutClick={handleAboutClick} handleHomeClick={handleHomeClick} handleContactClick={handleContactClick} handleEduClick={handleEduClick} handleProjectClick={handleProjectClick}/>
+            <Sidebar
+              key="sidebar"
+              handleClick={showHandler}
+              handleAboutClick={handleAboutClick}
+              handleHomeClick={handleHomeClick}
+              handleContactClick={handleContactClick}
+              handleEduClick={handleEduClick}
+              handleProjectClick={handleProjectClick}
+            />
           ),
         ]
       )}
       {showScrollToTop && (
-        <div className="fixed bottom-3 right-3 p-3 hover:-translate-y-[1vh] transition duration-300 z-20 bg-black/70 rounded-full ring-2 ring-[#eab208]" onClick={handleScrollToTop} data-aos="flip-up">
-          <RxPinTop
-            color="#eab208"
-            size="20px"
-            className=""
-          />
+        <div
+          className="fixed bottom-3 right-3 p-3 hover:-translate-y-[1vh] transition duration-300 z-20 bg-black/70 rounded-full ring-2 ring-[#eab208]"
+          onClick={handleScrollToTop}
+          data-aos="flip-up"
+        >
+          <RxPinTop color="#eab208" size="20px" className="" />
         </div>
       )}
-      <Home homeRef={homeRef}/>
-      <About aboutRef={aboutRef}/>
-      <Education eduRef={eduRef}/>
-      <Projects projectRef={projectRef}/>
-      <Contact contactRef={contactRef}/>
-      <Footer/>
+      <Home homeRef={homeRef} />
+      <About aboutRef={aboutRef} />
+      <Education eduRef={eduRef} />
+      <Projects projectRef={projectRef} />
+      <Contact contactRef={contactRef} />
+      <Footer />
     </div>
   );
 }
