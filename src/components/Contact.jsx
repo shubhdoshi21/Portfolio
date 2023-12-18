@@ -7,9 +7,9 @@ import "aos/dist/aos.css";
 const Contact = ({ contactRef }) => {
   useEffect(() => {
     AOS.init({
-      duration: 1000, // Animation duration in milliseconds
-      offset: 100, // Offset (in pixels) from the original trigger point
-      easing: "ease-in-out", // Easing function for the animation
+      duration: 750,
+      offset: 100, 
+      easing: "ease-in-out",
     });
   }, []);
   const [email, setEmail] = useState("");
@@ -88,7 +88,7 @@ const Contact = ({ contactRef }) => {
         Write me a message !
       </p>
       <div className="flex flex-row items-center justify-center sm:flex-col">
-        <div className="w-[50vw] p-5">
+        <div className="w-[50vw] p-5 sm:p-0">
           <img src={img} alt="" data-aos="fade-right"/>
         </div>
         <div className="w-[50vw] p-5 sm:w-full">

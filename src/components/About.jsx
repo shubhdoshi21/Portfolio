@@ -23,9 +23,9 @@ import "aos/dist/aos.css";
 const About = ({ aboutRef }) => {
   useEffect(() => {
     AOS.init({
-      duration: 1000, // Animation duration in milliseconds
-      offset: 100, // Offset (in pixels) from the original trigger point
-      easing: "ease-in-out", // Easing function for the animation
+      duration: 750, 
+      offset: 100, 
+      easing: "ease-in-out",
     });
   }, []);
   const [showTechSkills, setShowTechSkills] = useState(false);
@@ -64,7 +64,7 @@ const About = ({ aboutRef }) => {
         About Me
       </p>
       <div className="w-full flex flex-wrap">
-        <div className="w-1/3 flex sm:w-full sm:p-10 items-center justify-center">
+        <div className="w-1/3 flex sm:w-full sm:p-0 items-center justify-center">
           <img src={profile} alt="" className="sm:w-1/2" data-aos="fade-right"/>
         </div>
         <div className="w-2/3 flex p-16 md:p-10 sm:w-full sm:p-5 text-xl sm:text-lg text-justify" data-aos="fade-left">

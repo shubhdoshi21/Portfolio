@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { IoDocumentTextOutline } from "react-icons/io5";
 import { IoIosCall } from "react-icons/io";
 import { HiOutlineMail } from "react-icons/hi";
@@ -41,8 +40,8 @@ const Footer = () => {
       <div className="w-1/3 flex flex-col items-center justify-center sm:w-full" >
         <p className="text-lg font-bold py-2 text-yellow-500">Socials</p>
         <div className="w-full justify-center px-5 gap-5 flex">
-          <Link
-            to="https://instagram.com/ll._shubh_21_.ll"
+          <a
+            href="https://instagram.com/ll._shubh_21_.ll"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -50,9 +49,9 @@ const Footer = () => {
               size={30}
               className="hover:scale-110 transition duration-300 hover:-translate-y-1 text-white hover:text-yellow-500"
             />
-          </Link>
-          <Link
-            to="https://www.linkedin.com/in/shubh-doshi-921337256"
+          </a>
+          <a
+            href="https://www.Linkedin.com/in/shubh-doshi-921337256"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -60,9 +59,9 @@ const Footer = () => {
               size={30}
               className="hover:scale-110 transition duration-300 hover:-translate-y-1 text-white hover:text-yellow-500"
             />
-          </Link>
-          <Link
-            to="https://github.com/shubhdoshi21
+          </a>
+          <a
+            href="https://github.com/shubhdoshi21
             "
             target="_blank"
             rel="noopener noreferrer"
@@ -71,9 +70,9 @@ const Footer = () => {
               size={30}
               className="hover:scale-110 transition duration-300 hover:-translate-y-1 text-white hover:text-yellow-500"
             />
-          </Link>
-          <Link
-            to="https://twitter.com/shubhdoshi2112"
+          </a>
+          <a
+            href="https://twitter.com/shubhdoshi2112"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -81,7 +80,7 @@ const Footer = () => {
               size={30}
               className="hover:scale-110 transition duration-300 hover:-translate-y-1 text-white hover:text-yellow-500"
             />
-          </Link>
+          </a>
         </div>
       </div>
     </div>

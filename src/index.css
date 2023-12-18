@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+.ab {
+  font-family: 'Oswald', sans-serif;
+}
+
 /* Hide the default scrollbar */
 ::-webkit-scrollbar {
   width: 0.4rem;
@@ -40,4 +45,27 @@
 
 .borderz.active {
   background-size: 100% 2px;
+}
+
+.borderzz {
+  background-image: linear-gradient(
+    100deg,
+    #6b570f54 0%,
+    #eab208 50%,
+    #6b570f54 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 100% 2px;
+  background-position: 0% 100%;
+  width: auto;
+}
+
+.cursor-blink {
+  animation: blink-animation 0.5s step-end infinite;
+}
+
+@keyframes blink-animation {
+  50% {
+    opacity: 0;
+  }
 }

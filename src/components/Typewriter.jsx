@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 const Typewriter = ({ lines }) => {
   const [currentLine, setCurrentLine] = useState(0);
   const [displayText, setDisplayText] = useState("");
-  const [showCursor, setShowCursor] = useState(true);
   const [typing, setTyping] = useState(true);
 
   useEffect(() => {
@@ -22,11 +21,10 @@ const Typewriter = ({ lines }) => {
           reverseIndex--;
         } else {
           clearInterval(timer);
-          setShowCursor(false);
+          
 
           setTimeout(() => {
-            setShowCursor(true);
-            setCurrentLine((currentLine + 1) % lines.length); // Loop through lines
+                        setCurrentLine((currentLine + 1) % lines.length); // Loop through lines
             setTyping(true);
           }, 2000); // Pause between lines
 
@@ -42,8 +40,8 @@ const Typewriter = ({ lines }) => {
 
   return (
     <div>
-      <span className="text-2xl sm:text-xl pl-2">{displayText}</span>
-      {showCursor && <span className="text-2xl sm:text-xl animate-blink">|</span>}
+      <span className="pl-2">{displayText}</span>
+       <span className="cursor-blink">|</span>
     </div>
   );
 };

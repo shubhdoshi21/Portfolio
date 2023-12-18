@@ -11,11 +11,23 @@ import Education from "./components/Education";
 import Projects from "./components/Projects";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Typewriter from "./components/Typewriter";
+import { PiHandsPraying } from "react-icons/pi";
 
 function App() {
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const fetchData = setTimeout(() => {
+      setLoading(false);
+    }, 4500);
+
+    return () => clearTimeout(fetchData);
+  }, []);
+  const preloader = ["नमस्ते", "सुस्वागतम्"];
+
   useEffect(() => {
     AOS.init({
-      duration: 1000,
+      duration: 750,
       offset: 100,
       easing: "ease-in-out",
     });
@@ -84,58 +96,66 @@ function App() {
   }, []);
 
   return (
-    <div className="bg-[#1e1e1e] text-white overflow-hidden">
-      {width > breakpoint ? (
-        <Nav
-          key="navbar"
-          handleAboutClick={handleAboutClick}
-          handleHomeClick={handleHomeClick}
-          handleContactClick={handleContactClick}
-          handleEduClick={handleEduClick}
-          handleProjectClick={handleProjectClick}
-          homeRef={homeRef}
-          aboutRef={aboutRef}
-          eduRef={eduRef}
-          projectRef={projectRef}
-          contactRef={contactRef}
-        />
+    <div>
+      {loading ? (
+        <div className="text-5xl w-full h-screen items-center justify-center flex bg-[#1e1e1e] text-yellow-500 overflow-hidden flex-col gap-5">
+        <Typewriter lines={preloader} /><PiHandsPraying />
+      </div>
       ) : (
-        [
-          !showSidebar ? (
-            <div
-              key="menubar"
-              className="fixed top-10 right-10 cursor-pointer z-50"
-            >
-              <RiMenu3Fill size="30px" onClick={showHandler} />
-            </div>
-          ) : (
-            <Sidebar
-              key="sidebar"
-              handleClick={showHandler}
+        <div className="bg-[#1e1e1e] text-white overflow-hidden ab">
+          {width > breakpoint ? (
+            <Nav
+              key="navbar"
               handleAboutClick={handleAboutClick}
               handleHomeClick={handleHomeClick}
               handleContactClick={handleContactClick}
               handleEduClick={handleEduClick}
               handleProjectClick={handleProjectClick}
+              homeRef={homeRef}
+              aboutRef={aboutRef}
+              eduRef={eduRef}
+              projectRef={projectRef}
+              contactRef={contactRef}
             />
-          ),
-        ]
-      )}
-      {showScrollToTop && (
-        <div
-          className="fixed bottom-3 right-3 p-3 hover:-translate-y-[1vh] transition duration-300 z-20 bg-black/70 rounded-full ring-2 ring-[#eab208]"
-          onClick={handleScrollToTop}
-          data-aos="flip-up"
-        >
-          <RxPinTop color="#eab208" size="20px" className="" />
+          ) : (
+            [
+              !showSidebar ? (
+                <div
+                  key="menubar"
+                  className="fixed top-10 right-10 cursor-pointer z-50"
+                >
+                  <RiMenu3Fill size="30px" onClick={showHandler} />
+                </div>
+              ) : (
+                <Sidebar
+                  key="sidebar"
+                  handleClick={showHandler}
+                  handleAboutClick={handleAboutClick}
+                  handleHomeClick={handleHomeClick}
+                  handleContactClick={handleContactClick}
+                  handleEduClick={handleEduClick}
+                  handleProjectClick={handleProjectClick}
+                />
+              ),
+            ]
+          )}
+          {showScrollToTop && (
+            <div
+              className="fixed bottom-3 right-3 p-3 hover:-translate-y-[1vh] transition duration-300 z-20 bg-black/70 rounded-full ring-2 ring-[#eab208]"
+              onClick={handleScrollToTop}
+              data-aos="flip-up"
+            >
+              <RxPinTop color="#eab208" size="20px" className="" />
+            </div>
+          )}
+          <Home homeRef={homeRef} />
+          <About aboutRef={aboutRef} />
+          <Education eduRef={eduRef} />
+          <Projects projectRef={projectRef} />
+          <Contact contactRef={contactRef} />
+          <Footer />
         </div>
       )}
-      <Home homeRef={homeRef} />
-      <About aboutRef={aboutRef} />
-      <Education eduRef={eduRef} />
-      <Projects projectRef={projectRef} />
-      <Contact contactRef={contactRef} />
-      <Footer />
     </div>
   );
 }

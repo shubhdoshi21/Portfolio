@@ -6,7 +6,7 @@ const Nav = ({handleAboutClick,handleHomeClick,handleContactClick,handleEduClick
     const options = {
       root: null,
       rootMargin: "0px",
-      threshold: 0.8,
+      threshold: 0.25,
     };
 
     const observer = new IntersectionObserver((entries) => {

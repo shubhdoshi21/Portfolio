@@ -1,17 +1,26 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
 import img from "../assets/images/home.webp";
 import { IoLogoInstagram } from "react-icons/io";
 import { IoLogoLinkedin } from "react-icons/io";
 import { AiFillGithub } from "react-icons/ai";
 import { IoDocumentTextOutline } from "react-icons/io5";
 import Typewriter from "./Typewriter";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const Home = ({ homeRef }) => {
   const lines = [
     "Frontend Web-Developer",
     "Software Engineer",
     "React Developer",
   ];
+  useEffect(() => {
+    AOS.init({
+      duration: 750, 
+      offset: 0, 
+      easing: "ease-in-out",
+    });
+  }, []);
   return (
     <div className="w-full" ref={homeRef} id="home">
       <div className="w-full flex h-screen pt-20 sm:pt-0 flex-row sm:flex-col-reverse">
@@ -30,8 +39,8 @@ const Home = ({ homeRef }) => {
             requirement. Just reach out and let us know your needs.
           </p>
           <div className="w-full justify-center p-5 gap-5 flex" data-aos="fade-up">
-            <Link
-              to="https://instagram.com/ll._shubh_21_.ll"
+            <a
+              href="https://instagram.com/ll._shubh_21_.ll"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -39,9 +48,9 @@ const Home = ({ homeRef }) => {
                 size={30}
                 className="hover:scale-110 transition duration-300 hover:-translate-y-2 text-yellow-500 hover:text-white"
               />
-            </Link>
-            <Link
-              to="https://www.linkedin.com/in/shubh-doshi-921337256"
+            </a>
+            <a
+              href="https://www.Linkedin.com/in/shubh-doshi-921337256"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -49,9 +58,9 @@ const Home = ({ homeRef }) => {
                 size={30}
                 className="hover:scale-110 transition duration-300 hover:-translate-y-2 text-yellow-500 hover:text-white"
               />
-            </Link>
-            <Link
-              to="https://github.com/shubhdoshi21
+            </a>
+            <a
+              href="https://github.com/shubhdoshi21
             "
               target="_blank"
               rel="noopener noreferrer"
@@ -60,7 +69,7 @@ const Home = ({ homeRef }) => {
                 size={30}
                 className="hover:scale-110 transition duration-300 hover:-translate-y-2 text-yellow-500 hover:text-white"
               />
-            </Link>
+            </a>
             <IoDocumentTextOutline
               size={30}
               className="hover:scale-110 transition duration-300 hover:-translate-y-2 text-yellow-500 hover:text-white"
