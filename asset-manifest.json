@@ -1,19 +1,20 @@
 {
   "files": {
-    "main.css": "/Portfolio/static/css/main.05baab7f.css",
-    "main.js": "/Portfolio/static/js/main.ed260c3c.js",
+    "main.css": "/Portfolio/static/css/main.97770c39.css",
+    "main.js": "/Portfolio/static/js/main.26f656d1.js",
     "static/media/paramarsh.png": "/Portfolio/static/media/paramarsh.196b14ed11072af3b416.png",
     "static/media/linefollower1.jpg": "/Portfolio/static/media/linefollower1.1390c5b2d329654f7f03.jpg",
     "static/media/portfolio.png": "/Portfolio/static/media/portfolio.a319c81e27d871af6c76.png",
     "static/media/profile.svg": "/Portfolio/static/media/profile.84bf93eb20488a753440bf83d27db7bb.svg",
     "static/media/home.webp": "/Portfolio/static/media/home.ec15e0902dee391baf10.webp",
+    "static/media/MSUlogo.jpg": "/Portfolio/static/media/MSUlogo.ebf60cee61a2aff67462.jpg",
     "static/media/contact.svg": "/Portfolio/static/media/contact.87eac2b29352fa01abb2f9510ef6ac7e.svg",
     "index.html": "/Portfolio/index.html",
-    "main.05baab7f.css.map": "/Portfolio/static/css/main.05baab7f.css.map",
-    "main.ed260c3c.js.map": "/Portfolio/static/js/main.ed260c3c.js.map"
+    "main.97770c39.css.map": "/Portfolio/static/css/main.97770c39.css.map",
+    "main.26f656d1.js.map": "/Portfolio/static/js/main.26f656d1.js.map"
   },
   "entrypoints": [
-    "static/css/main.05baab7f.css",
-    "static/js/main.ed260c3c.js"
+    "static/css/main.97770c39.css",
+    "static/js/main.26f656d1.js"
   ]
 }
